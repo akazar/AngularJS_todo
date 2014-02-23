@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="container" ng-controller="TodoController">
+      <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+        <div class="row">
+          <span>{{calcTasks()}}</span> 
+          <button type="button" class="btn btn-primary pull-right" ng-click="clearDone()">Clear done</button>
+        </div>  
+        <ul class="todoList">
+          <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.task}}</span>
+          </li>
+        </ul>
+        <div class="row addBlock"> 
+          <input type="text" class="form-control input-lg" placeholder="Enter task" ng-model="newTask">
+          <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="addTask()">Add</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

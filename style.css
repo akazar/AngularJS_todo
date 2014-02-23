@@ -1,0 +1,16 @@
+body {
+	padding-top: 20px;
+	font-size: 26px;
+}
+
+ul.todoList{
+	list-style-type: none;
+}
+
+.done-true{
+	text-decoration: line-through;
+}
+
+.addBlock *{
+	margin: 5px;
+}
